@@ -33,8 +33,13 @@ public class WeatherEntry extends HttpServlet {
 	weather.temperature = Double.parseDouble(request.getParameter("tem"));
 	weather.pressure = Double.parseDouble(request.getParameter("pre"));
 	weather.humidity = Double.parseDouble(request.getParameter("hum"));
-	System.out.println(request.getParameter("dat"));
-	System.out.println(request.getParameter("tim"));
+	if (weather.temperature < 11) {
+		weather.condition = "Snow";
+	} else if (weather.humidity >= 90) {
+		weather.condition = "Snow";
+	} else {
+		weather.condition = "Sunny";
+	}
 	try {
 		weather.time = new SimpleDateFormat("yyyy-MM-dd hh:mm a").parse(request.getParameter("dat") + " " + request.getParameter("tim"));
 	} catch (java.text.ParseException pEx) {
