@@ -1,0 +1,4 @@
+com\weather\servlets\WeatherEntry.class
+com\weather\Weather.class
+com\weather\WeatherDataHolder.class
+com\weather\Position.class

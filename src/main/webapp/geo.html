@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simulation data entry</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="resources/css/weather.css">
+	<link rel="stylesheet" href="resources/css/jquery-ui.css">
+	<script src="resources/js/jquery-1.12.4.js"></script>
+	<script src="resources/js/jquery-ui.js"></script>
+	<script src="resources/js/globalize.js"></script>
+	<script src="resources/js/jquery.mousewheel.js"></script>
+	<script src="resources/js/weather.js"></script>
+	</head>
+  <body>
+  <div>
+  <h1>Whether data entry and reporting</h1>
+  To enter data click on a location.
+  </div>
+    <div id="floating-panel">
+      <input id="address" type="textbox" value="Sydney, NSW">
+      <input id="submit" type="button" value="Locate">
+    </div>
+    <div id="map"></div>
+ 
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzTf9D7lO2UDnLKZyaYKS79xI_ESRlk38&callback=initMap">
+    </script>
+	<div id="weatherentry">
+		<div id="popupWeather">
+			<form action="WeatherEntry" id="form" method="post" name="form">
+			<img id="close" src="resources/images/close.png" onclick ="hideWeatherEntryPopup()">
+			<h2>Weather Inputs</h2>
+			<hr>
+			<label for="longitude">Latitude:</label>
+			<input id="latitude" name="latitude" placeholder="Latitude" type="text" readonly><br>
+			<label for="longitude">Longitude:</label>
+			<input id="longitude" name="longitude" placeholder="Longitude" type="text" readonly><br>
+			<label for="datepicker">Date:</label>
+			<input type="text" id="datepicker">
+			<label for="spinner">Time:</label>
+			<input id="spinner" name="spinner" value="08:30 PM">
+			<label for="elevation">Elevation:</label>
+			<input id="elevation" name="elevation" placeholder="Elevation" type="text"><br>
+			<label for="location">Location:</label>
+			<input id="location" name="location" placeholder="Location" type="text"><br>
+
+			<label for="temperature">Temperature:</label>
+			<input id="temperature" name="temperature" placeholder="Temperature" type="text"><br>
+			<label for="pressure">Pressure:</label>
+			<input id="pressure" name="pressure" placeholder="Pressure" type="text"><br>
+			<label for="humidity">Humidity:</label>
+			<input id="humidity" name="humidity" placeholder="Humidity" type="text"><br>
+			<br>
+			<a href="javascript:%20sendInfo()" id="submit">Save</a>
+			<span id="message"> </span>  
+			</form>
+			</div>
+	</div>
+	<br>
+	<div><h2>Report</h2></div>
+	<span id="result"> </span>  
+</html>
