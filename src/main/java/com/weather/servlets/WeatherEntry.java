@@ -36,7 +36,7 @@ public class WeatherEntry extends HttpServlet {
 	if (weather.temperature < 11) {
 		weather.condition = "Snow";
 	} else if (weather.humidity >= 90) {
-		weather.condition = "Snow";
+		weather.condition = "Rain";
 	} else {
 		weather.condition = "Sunny";
 	}
